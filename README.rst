@@ -136,12 +136,6 @@ build_only              When set to `true`, the Sphinx site will be built but no
 pre_build_commands      Commands to run prior to build and deploy. Useful for
                         ensuring build dependencies are up to date or installing
                         new dependencies.
-keep_history            When set to `true`, previous version of the site will be restored before the Jekyll build takes
-                        place. You can then use
-                        [the `keep_files` option](https://jekyllrb.com/docs/configuration/options/#global-configuration)
-                        in your `_config.yml` file to select the files you want to keep. Make sure you then keep at
-                        least the `.git` folder. This option will also remove the `--force` flag from the
-                        `git commit...` command.
 ======================  ================================================================================================
 
 
