@@ -6,7 +6,7 @@ on:
 
 
 env:
-  URL: https://docs.totaldebug.uk/action-sphinx/
+  URL: https://docs.totaldebug.uk/sphinx-publish-action/
 
 jobs:
   basic-publish:

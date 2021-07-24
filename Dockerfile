@@ -1,8 +1,8 @@
 FROM python:3.9.6-alpine
 
 LABEL version="1.0.0"
-LABEL repository="https://github.com/totaldebug/action-sphinx"
-LABEL homepage="https://github.com/totaldebug/action-sphinx"
+LABEL repository="https://github.com/totaldebug/sphinx-publish-action"
+LABEL homepage="https://github.com/totaldebug/sphinx-publish-action"
 LABEL maintainer="Steven Marks <marksie1988@github.com>"
 
 # debug
