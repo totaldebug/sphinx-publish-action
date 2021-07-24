@@ -121,43 +121,61 @@ to navigate to your GitHub Pages site.
 Inputs
 ******
 
-.. list-table::
-   :header-rows: 1
-
-    * - token
-    * - the `GITHUB_TOKEN` secret. This is mandatory unless `build_only` is set to `true`.
-
-    * - sphinx_env
-    * - The Sphinx environment to build (default to `production`)
-
-    * - sphinx_src
-    * - The Sphinx website source directory
-
-    * - sphinx_build_options
-    * - Additional Sphinx build arguments
-
-    * - target_branch
-    * - The target branch name the sources get pushed to
-
-    * - target_path
-    * - The relative path where the site gets pushed to
-
-    * - build_only
-    * - When set to `true`, the Sphinx site will be built but not published
-
-    * - pre_build_commands
-    * - Commands to run prior to build and deploy. Useful for ensuring build dependencies are up to date or installing new dependencies.
-
-    * - keep_history
-    * - When set to `true`, previous version of the site will be restored before the Jekyll build takes place. You can then use [the `keep_files` option](https://jekyllrb.com/docs/configuration/options/#global-configuration) in your `_config.yml` file to select the files you want to keep. Make sure you then keep at least the `.git` folder. This option will also remove the `--force` flag from the `git commit...` command.
-
+======================  ================================================================================================
+Directive Name          Description (Docutils version added to, in [brackets])
+======================  ================================================================================================
+token                   the `GITHUB_TOKEN` secret. This is mandatory unless
+                        `build_only` is set to `true`.
+sphinx_env              The Sphinx environment to build (default to `production`)
+sphinx_src              The Sphinx website source directory
+sphinx_build_options    Additional Sphinx build arguments
+target_branch           The target branch name the sources get pushed to
+target_path             The relative path where the site gets pushed to
+build_only              When set to `true`, the Sphinx site will be built but not
+                        published
+pre_build_commands      Commands to run prior to build and deploy. Useful for
+                        ensuring build dependencies are up to date or installing
+                        new dependencies.
+keep_history            When set to `true`, previous version of the site will be restored before the Jekyll build takes
+                        place. You can then use
+                        [the `keep_files` option](https://jekyllrb.com/docs/configuration/options/#global-configuration)
+                        in your `_config.yml` file to select the files you want to keep. Make sure you then keep at
+                        least the `.git` folder. This option will also remove the `--force` flag from the
+                        `git commit...` command.
+======================  ================================================================================================
 
 
 Example Usage:
 =====================
 
 .. code:: python
+   name: Testing the GitHub Pages publication
 
+   on:
+      push
+
+   jobs:
+     sphinx:
+       runs-on: ubuntu-latest
+       steps:
+       - uses: actions/checkout@v2
+
+       # Standard usage
+       - uses:  totaldebug/sphinx-publish-action@v2
+         with:
+           token: ${{ secrets.GITHUB_TOKEN }}
+
+       # Specify the sphinx source location as a parameter
+       - uses: totaldebug/sphinx-publish-action@v2
+         with:
+           token: ${{ secrets.GITHUB_TOKEN }}
+           sphinx_src: 'sample_site'
+
+       # Specify the target branch (optional)
+       - uses: totaldebug/sphinx-publish-action@v2
+         with:
+           token: ${{ secrets.GITHUB_TOKEN }}
+           target_branch: 'gh-pages'
 
 
 *******
