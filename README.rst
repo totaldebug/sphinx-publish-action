@@ -2,13 +2,16 @@
 
    <h1 align="center">
 
-action-sphinx: Publish Sphinx to Github Pages, Quick and Easy.
+Sphinx Publish Action: Publish Sphinx to Github Pages, Quick and Easy.
 
 .. raw:: html
 
    </h1>
 
    <p align="center">
+
+
+`About`_ • `Usage`_ • `Inputs`_ • `Author`_ • `Support`_ • `Donate`_ • `Credits`_ • `License`_
 
 
 .. raw:: html
@@ -33,7 +36,7 @@ About
    <tr>
    <td>
 
-**action-sphinx** is a GitHub Action to build and publish Sphinx sites to GitHub Pages
+**sphinx-publish-action** is a GitHub Action to build and publish Sphinx sites to GitHub Pages
 
 Remember that GitHub is serving your built static site, not its sources. So when
 configuring GitHub Pages in your project settings, use **gh-pages branch** as a
@@ -184,6 +187,16 @@ Reach out to me at one of the following places:
 -  `Discussions <https://github.com/totaldebug/pyarr/discussions>`__
 -  `Issues <https://github.com/totaldebug/pyarr/issues/new/choose>`__
 
+
+******
+Donate
+******
+
+Please consider supporting this project by sponsoring, or just donating
+a little via `our sponsor
+page <https://github.com/sponsors/marksie1988>`__
+
+
 ******
 Author
 ******
@@ -194,14 +207,6 @@ Author
    * - |TotalDebug|
    * - **marksie1988 (Steven Marks)**
 
-
-******
-Donate
-******
-
-Please consider supporting this project by sponsoring, or just donating
-a little via `our sponsor
-page <https://github.com/sponsors/marksie1988>`__
 
 *******
 License
