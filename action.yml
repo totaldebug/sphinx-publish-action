@@ -1,4 +1,4 @@
-name: 'Sphinx Actions'
+name: 'Sphinx Publish Action'
 description: 'A GitHub Action to build and publish Jekyll sites to GitHub Pages'
 inputs:
   token:
