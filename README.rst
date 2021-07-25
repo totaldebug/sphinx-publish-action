@@ -11,7 +11,7 @@ Sphinx Publish Action: Publish Sphinx to Github Pages, Quick and Easy.
    <p align="center">
 
 
-`About`_ • `Usage`_ • `Inputs`_ • `Author`_ • `Support`_ • `Donate`_ • `Credits`_ • `License`_
+`About`_ • `Usage`_ • `Inputs`_ • `Author`_ • `Support`_ • `Donate`_ • `License`_
 
 
 .. raw:: html
