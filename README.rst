@@ -124,9 +124,9 @@ to navigate to your GitHub Pages site.
 Inputs
 ******
 
-======================  ================================================================================================
+======================  =============================================================
 Directive Name          Description (Docutils version added to, in [brackets])
-======================  ================================================================================================
+======================  =============================================================
 token                   the `GITHUB_TOKEN` secret. This is mandatory unless
                         `build_only` is set to `true`.
 sphinx_env              The Sphinx environment to build (default to `production`)
@@ -139,7 +139,8 @@ build_only              When set to `true`, the Sphinx site will be built but no
 pre_build_commands      Commands to run prior to build and deploy. Useful for
                         ensuring build dependencies are up to date or installing
                         new dependencies.
-======================  ================================================================================================
+cname                   Contents of CNAME file, this will be copied over.
+======================  =============================================================
 
 
 Example Usage:
