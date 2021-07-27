@@ -106,7 +106,7 @@ if [ "${INPUT_KEEP_HISTORY}" = true ]; then
   COMMIT_OPTIONS="--allow-empty"
 else
   echo "::debug::Initializing new repo"
-  LOCAL_BRANCH="main"
+  LOCAL_BRANCH="master"
   git init
   PUSH_OPTIONS="--force"
   COMMIT_OPTIONS=""
