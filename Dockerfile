@@ -12,6 +12,7 @@ RUN apt install curl dh-autoreconf libcurl4-gnutls-dev libexpat1-dev gettext lib
 
 RUN wget https://github.com/git/git/archive/refs/tags/v2.32.0.tar.gz
 RUN tar -zxf v2.32.0.tar.gz
+RUN cd git-2.32.0
 RUN make configure
 RUN ./configure --prefix=/usr
 RUN make install install-info
