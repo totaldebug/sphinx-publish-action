@@ -9,7 +9,7 @@ LABEL maintainer="Steven Marks <marksie1988@github.com>"
 RUN apk add --no-cache git build-base
 RUN apk add --update curl
 
-RUN pip install -U sphinx
+RUN pip install -U sphinx poetry
 RUN sphinx-build --version
 
 COPY LICENSE README.rst /

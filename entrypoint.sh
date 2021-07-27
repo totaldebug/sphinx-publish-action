@@ -125,7 +125,6 @@ fi
 echo "::debug::Checking for poetry file in ${GITHUB_WORKSPACE}/pyproject.toml"
 if [ -f "${GITHUB_WORKSPACE}/pyproject.toml" ]; then
     echo "::debug::Installing Poetry Project requirements"
-    pip install poetry
     poetry config virtualenvs.create false --local
     poetry install
 fi
