@@ -13,8 +13,8 @@ RUN apt install curl dh-autoreconf libcurl4-gnutls-dev libexpat1-dev gettext lib
 RUN wget https://github.com/git/git/archive/refs/tags/v2.32.0.tar.gz
 RUN tar -zxf v2.32.0.tar.gz
 RUN cd git-2.32.0
-RUN make prefix=/usr/local all
-RUN make prefix=/usr/local install
+RUN make configure
+RUN make install
 RUN exec bash
 RUN pip install -U sphinx poetry
 RUN sphinx-build --version
