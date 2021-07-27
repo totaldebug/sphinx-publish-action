@@ -6,9 +6,9 @@ LABEL homepage="https://github.com/totaldebug/sphinx-publish-action"
 LABEL maintainer="Steven Marks <marksie1988@github.com>"
 
 # debug
-RUN apt update -y 
+RUN apt update -y
 RUN apt upgrade -y
-RUN apt add curl git -y
+RUN apt install curl git -y
 
 RUN pip install -U sphinx poetry
 RUN sphinx-build --version
