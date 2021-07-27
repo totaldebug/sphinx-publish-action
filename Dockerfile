@@ -14,9 +14,9 @@ RUN wget https://github.com/git/git/archive/refs/tags/v2.32.0.tar.gz
 RUN tar -zxf v2.32.0.tar.gz
 RUN cd git-2.32.0
 RUN make configure
-RUN ./configure --prefix=/usr
-RUN make install install-info
-
+RUN make prefix=/usr/local all
+RUN make prefix=/usr/local install
+RUN exec bash
 RUN pip install -U sphinx poetry
 RUN sphinx-build --version
 
