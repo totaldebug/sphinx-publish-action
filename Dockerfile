@@ -8,14 +8,8 @@ LABEL maintainer="Steven Marks <marksie1988@github.com>"
 # debug
 RUN apt update -y
 RUN apt upgrade -y
-RUN apt install curl dh-autoreconf libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev install-info -y
+RUN apt install curl git -y
 
-RUN wget https://github.com/git/git/archive/refs/tags/v2.32.0.tar.gz
-RUN tar -zxf v2.32.0.tar.gz
-RUN cd git-2.32.0
-RUN make configure
-RUN make install
-RUN exec bash
 RUN pip install -U sphinx poetry
 RUN sphinx-build --version
 
