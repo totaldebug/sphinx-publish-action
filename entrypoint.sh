@@ -106,8 +106,8 @@ if [ "${INPUT_KEEP_HISTORY}" = true ]; then
   COMMIT_OPTIONS="--allow-empty"
 else
   echo "::debug::Initializing new repo"
-  LOCAL_BRANCH="main"
-  git init -b $LOCAL_BRANCH
+  LOCAL_BRANCH="master"
+  git init
   PUSH_OPTIONS="--force"
   COMMIT_OPTIONS=""
 fi
@@ -115,6 +115,19 @@ fi
 echo "::debug::Local branch is ${LOCAL_BRANCH}"
 
 cd "${GITHUB_WORKSPACE}"
+
+echo "::debug::Checking for requirements file in ${GITHUB_WORKSPACE}/requirements.txt"
+if [ -f "${GITHUB_WORKSPACE}/requirements.txt" ]; then
+    echo "::debug::Installing Project requirements"
+    pip install -r ${GITHUB_WORKSPACE}/requirements.txt
+fi
+
+echo "::debug::Checking for poetry file in ${GITHUB_WORKSPACE}/pyproject.toml"
+if [ -f "${GITHUB_WORKSPACE}/pyproject.toml" ]; then
+    echo "::debug::Installing Poetry Project requirements"
+    poetry build -f wheel
+    pip install dist/*.whl
+fi
 
 echo "::debug::Checking for requirements file in ${SPHINX_SRC}/requirements.txt"
 if [ -f "${SPHINX_SRC}/requirements.txt" ]; then
