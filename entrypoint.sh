@@ -126,7 +126,7 @@ echo "::debug::Checking for poetry file in ${GITHUB_WORKSPACE}/pyproject.toml"
 if [ -f "${GITHUB_WORKSPACE}/pyproject.toml" ]; then
     echo "::debug::Installing Poetry Project requirements"
     poetry config virtualenvs.create false --local
-    poetry install
+    poetry install --no-dev
 fi
 
 echo "::debug::Checking for requirements file in ${SPHINX_SRC}/requirements.txt"
